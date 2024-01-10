@@ -12,3 +12,9 @@ SELECT * FROM CITY WHERE COUNTRYCODE = "JPN"
 
 -- Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
 SELECT NAME FROM CITY WHERE COUNTRYCODE = "JPN"
+
+-- Query a list of CITY and STATE from the STATION table The STATION table is described as follows: where LAT_N is the northern latitude and LONG_W is the western longitude.
+SELECT CITY, STATE FROM STATION WHERE LAT_N != 0 AND LONG_W != 0
+
+-- Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+SELECT DISTINCT CITY FROM STATION WHERE MOD(ID, 2) = 0
